@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-nginx
+  labels:
+    course: DevOps 
+    now: K8s 
+    colour: green
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      course: DevOps 
+      now: K8s
+      colour: green
+  template:
+    metadata:
+      labels:
+        course: DevOps 
+        now: K8s
+        colour: green
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:trixie-perl
